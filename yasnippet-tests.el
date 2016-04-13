@@ -831,7 +831,7 @@ add the snippets associated with the given mode."
 (defun yas-should-expand (keys-and-expansions)
   (dolist (key-and-expansion keys-and-expansions)
     (yas-exit-all-snippets)
-    (narrow-to-region (point) (point))
+    (erase-buffer)
     (insert (car key-and-expansion))
     (let ((yas-fallback-behavior nil))
       (ert-simulate-command '(yas-expand)))
