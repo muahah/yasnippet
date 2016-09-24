@@ -3058,7 +3058,9 @@ Otherwise delegate to `yas-next-field'."
             (active-field (overlay-get yas--active-field-overlay 'yas--field)))
         (when active-field
           (unless (yas-expand-from-trigger-key active-field)
-            (yas-next-field))))
+            (yas-next-field))
+          ; (move-end-of-line 1) ;; here boy
+          ))
     (yas-next-field)))
 
 (defun yas-next-field-will-exit-p (&optional arg)
